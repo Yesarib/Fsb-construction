@@ -2,7 +2,7 @@ import React from "react";
 
 const Upper = () => {
   return (
-    <div>
+    <div className="font-roboto">
       <div className="inset-0 bg-black ">
         <img
           style={{ height: "45em",backgroundColor:'black' }}
