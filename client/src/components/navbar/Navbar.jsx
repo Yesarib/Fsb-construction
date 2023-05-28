@@ -2,14 +2,16 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div className="w-full h-20 items-center justify-evenly d-flex flex mt-2">
-      <div className="w-full text-center text-[24px]">
-        <a className="font-roboto" href="/"> FSB </a>
+    <div className="w-full h-16 items-center justify-evenly d-flex flex mt-2 ">
+      <div className="w-full flex justify-center items-center text-[24px]">
+        <a className="font-roboto flex " href="/"> 
+          <img src="assets/logo.png" alt="logo" />
+        </a>
       </div>
       <div className="w-full">
         <nav className="p-2 text-[17px] space-x-20">
           <a className="font-roboto" href="/projects">Projeler</a>
-          <a className="font-roboto" href="#">Şirket</a>
+          <a className="font-roboto" href="/company">Şirket</a>
           <button className=" w-24 h-10 rounded-xl bg-primary text-white font-roboto
             transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300
           "          

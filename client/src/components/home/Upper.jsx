@@ -14,7 +14,7 @@ const Upper = () => {
           style={{
             position: "absolute",
             top: "45%",
-            left: "41%",
+            left: "45%",
             transform: "translate(-50%, -50%)",
             color: "white",
           }}

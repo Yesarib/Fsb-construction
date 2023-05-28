@@ -3,12 +3,12 @@ import React from "react";
 const WhyChoose = () => {
   return (
     <div className="w-full flex flex-col items-center justify-center mt-20 font-roboto">
-      <div className="w-4/5 flex justify-start">
+      <div className="w-4/6 flex justify-start">
         <h1 className="flex justify-start mb-5 text-primary font-bold text-[36px]">
           Bizi Neden Seçmelisiniz ?
         </h1>
       </div>
-      <div className="w-4/5 flex justify-start ml-36 mt-10 space-x-60">
+      <div className="w-4/6 flex justify-start ml-36 mt-10 space-x-60">
         <div className="w-2/6 flex items-center ">
           <img
             className="w-24"
@@ -48,7 +48,7 @@ const WhyChoose = () => {
           </div>
         </div>
       </div>
-      <div className="w-4/5 flex justify-start ml-36 space-x-60 mt-24">
+      <div className="w-4/6 flex justify-start ml-36 space-x-60 mt-24">
         <div className="w-2/6 flex items-center ">
           <img
             className="w-24"

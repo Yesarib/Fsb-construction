@@ -3,7 +3,7 @@ import React from "react";
 const About = () => {
   return (
     <div className="w-full flex items-center justify-center mt-20 font-roboto">
-      <div className="w-4/5">
+      <div className="w-4/6">
         <h1 className="flex justify-start mb-5 text-primary font-bold text-[36px]">
           Türkiye Çapında Faaliyetler
         </h1>

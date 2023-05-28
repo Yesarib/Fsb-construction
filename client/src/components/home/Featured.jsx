@@ -10,7 +10,7 @@ const Featured = () => {
   console.log(project);
   return (
     <div className="w-full flex flex-col items-center justify-center mt-36 font-roboto">
-      <div className="w-4/5 flex flex-col justify-start">
+      <div className="w-4/6 flex flex-col justify-start">
         <h1 className="flex justify-start mb-5 text-primary font-bold text-[36px]">
           {" "}
           Öne Çıkan Projeler{" "}
@@ -22,7 +22,7 @@ const Featured = () => {
           ratione possimus!
         </p>
       </div>
-      <div className="w-4/5 flex justify-start mt-10">
+      <div className="w-4/6 flex justify-start mt-12">
         {project.slice(0,3).map((project) => (
             <div
             className="ml-10" 
