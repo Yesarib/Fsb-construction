@@ -9,6 +9,14 @@ const projeSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  place: {
+    type: String,
+    required: true,
+  },
+  adress: {
+    type: String,
+    required: true,
+  },
   date: {
     type: Date,
     default: Date.now,
@@ -21,4 +29,4 @@ const projeSchema = new mongoose.Schema({
 
 const Project = mongoose.model("Proje", projeSchema);
 
-module.exports = Project;
+export default Project;

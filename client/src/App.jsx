@@ -1,28 +1,35 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
-import Home from "./components/home/home";
 import Footer from "./components/footer/Footer";
 import Projects from "./components/projects/Projects";
 import Company from "./components/company/Company";
+import Home from "./components/home/home";
+import Admin from './components/admin/Admin'
 
 function App() {
   return (
     <>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/projects' element={<Projects />} />
-          <Route path='/company' element={<Company />} />
-        </Routes>
-        <Footer />
-      </Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/company" element={<Company />} />
+      </Routes>
+      <Footer />
     </>
   );
 }
 
-export default App;
+function MainApp() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/admin/*" element={<Admin />} />
+        <Route path="/*" element={<App />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default MainApp;
