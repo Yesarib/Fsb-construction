@@ -2,7 +2,7 @@ import React from "react";
 
 const Sidebar = ({ onContentChange }) => {
   return (
-    <div className="w-72 bg-indigo-950 flex flex-col items-center ">
+    <div className="w-72 h-screen bg-indigo-950 flex flex-col items-center ">
       <div className="items-center mt-20">
         <h1 className="text-white font-bold text-[24px] mt-16 tracking-widest"> FSB İnşaat </h1>
         <h1 className="text-white text-[20px] mt-10 tracking-wider"> Barış Yesari </h1>

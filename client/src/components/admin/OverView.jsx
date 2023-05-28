@@ -2,7 +2,7 @@ import React from 'react'
 
 const OverView = () => {
   return (
-    <div>OverView</div>
+    <div className='w-full h-screen'>OverView</div>
   )
 }
 

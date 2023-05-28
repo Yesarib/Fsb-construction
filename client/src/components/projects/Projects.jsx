@@ -1,27 +1,67 @@
-import React from "react";
-import { projects } from "../../data";
+import React, {useState , useEffect} from "react";
+// import { projects } from "../../data";
+import axios from 'axios'
+import ReactPaginate from "react-paginate";
+
 
 const Projects = () => {
+  const [projects, setProjects] = useState([])
+  const [pageNumber, setPageNumber] = useState(0);
+  const projectsPerPage = 5; 
+
+  const getProjects = async () => {
+    await axios.get("http://localhost:5000/projects").then((res) => {
+      setProjects(res.data);
+      console.log(res.data);
+    });
+  };
+
+  useEffect(() => {
+    getProjects();
+  }, []);
+
+  const pageCount = Math.ceil(projects.length / projectsPerPage);
+  const pagesVisited = pageNumber * projectsPerPage;
+  const displayedProjects = projects.slice(
+    pagesVisited,
+    pagesVisited + projectsPerPage
+  );
+
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
+
   return (
     <div className="flex flex-col items-center justify-center font-roboto">
-      <div className="w-4/5 flex justify-start flex-col">
+      <div className="w-4/6 flex justify-start flex-col mt-16">
         <h1 className="text-primary text-[36px] font-semibold mt-10 ml-2"> Projeler </h1>
         <p className="ml-2 mt-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae aspernatur sit harum mollitia nihil placeat, molestias, sed quia aliquid quod corrupti obcaecati et modi, ratione architecto. Assumenda ducimus tempore pariatur!</p>
       </div>
-      <div className="w-4/5 flex flex-col justify-start ">
-        {projects.map((project) => (
-          <div key={project.id} className="w-full flex bg-gray-100  shadow-xl rounded-xl mt-24">
-            <img className="rounded-xl w-5/12 ml-2 mt-2 mb-2" src={project.imgUrl} alt={project.name} />
+      <div className="w-4/6 flex flex-col justify-start ">
+        {displayedProjects.map((project) => (
+          <div key={project._id} className="w-full flex bg-gray-100  shadow-xl rounded-xl mt-24">
+            <img className="rounded-xl w-5/12 ml-2 mt-2 mb-2" src={project.imageUrl[0]} alt={project.name} />
             <div>
-            <h1 className="mt-5 ml-5 text-primary text-[18px] font-semibold" > {project.name} </h1>
+            <h1 className="mt-5 ml-5 text-primary text-[18px] font-semibold" > {project.title} </h1>
             <p className="mt-5 ml-5">
                 {project.description}
             </p>
-            </div>
-            
+            </div>            
           </div>
         ))}
       </div>
+      <ReactPaginate
+          className="flex space-x-20 justify-center mt-10"
+          previousLabel={"Önceki"}
+          nextLabel={"Sonraki"}
+          pageCount={pageCount}
+          onPageChange={changePage}
+          containerClassName={"pagination"}
+          previousLinkClassName={"pagination__link"}
+          nextLinkClassName={"pagination__link"}
+          disabledClassName={"pagination__link--disabled"}
+          activeClassName={"pagination__link--active"}
+        />
     </div>
   );
 };

@@ -5,13 +5,25 @@ import ReactPaginate from "react-paginate";
 const Project = () => {
   const [projects, setProjects] = useState([]);
   const [pageNumber, setPageNumber] = useState(0);
-  const projectsPerPage = 5; // Sayfa başına görüntülenen proje sayısı
+  const projectsPerPage = 5; 
 
   const getProjects = async () => {
     await axios.get("http://localhost:5000/projects").then((res) => {
       setProjects(res.data);
     });
   };
+
+  const deleteProject = async (id) => {
+    axios.delete(`http://localhost:5000/projects/deleteProject/${id}`)
+    .then((res) => {
+      console.log(res);  
+      alert("Başarıyla silindi");
+      getProjects();
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  }
 
   useEffect(() => {
     getProjects();
@@ -29,7 +41,7 @@ const Project = () => {
   };
 
   return (
-    <div className="flex w-full justify-center items-center">
+    <div className="flex w-full h-screen justify-center items-center">
       <div className="flex flex-col w-full">
         <h1 className="text-primary text-[36px] font-bold ml-8 mt-16">
           Projeler
@@ -51,10 +63,10 @@ const Project = () => {
                 <td>{project.title}</td>
                 <td>{project.description}</td>
                 <td>
-                  <button>Sil</button>
+                  <button onClick={() => deleteProject(project._id)} className="w-24 bg-red-500 text-white rounded-xl">Sil</button>
                 </td>
                 <td>
-                  <button>Güncelle</button>
+                  <button className="w-24 bg-green-500 text-white rounded-xl">Güncelle</button>
                 </td>
               </tr>
             ))}
@@ -72,9 +84,7 @@ const Project = () => {
           disabledClassName={"pagination__link--disabled"}
           activeClassName={"pagination__link--active"}
         />
-        <button className="flex mt-5 mb-10 bg-primary w-72 h-12 text-center justify-center items-center text-white ml-10 rounded-3xl font-semibold text-[18px] tracking-wider">
-          Yeni Proje
-        </button>
+        <a href="/admin/projectadd" className="flex mt-5 mb-10 bg-primary w-72 h-12 text-center justify-center items-center text-white ml-10 rounded-3xl font-semibold text-[18px] tracking-wider"> Yeni Proje </a>
       </div>
     </div>
   );

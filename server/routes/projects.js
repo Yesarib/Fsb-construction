@@ -1,6 +1,6 @@
 import express from "express";
 import multer from "multer";
-import { addProject, getProjects } from "../controllers/projects.js";
+import { addProject, deleteProject, getProjects } from "../controllers/projects.js";
 
 const router = express.Router();
 
@@ -18,5 +18,6 @@ const upload = multer({ storage: storage });
 
 router.get("/", getProjects);
 router.post("/addProject", upload.array('resimler', 5), addProject);
+router.delete("/deleteProject/:id", deleteProject)
 
 export default router;
