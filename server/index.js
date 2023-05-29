@@ -49,8 +49,6 @@ app.post('/addProject',upload.single('picture'), addProject)
 
 
 const Port = process.env.PORT || 5000;
-// const Mongo_url = "mongodb+srv://yesaribaris23:xd2qc4qG5PUvor1i@fsb-cluster.v9czz1b.mongodb.net/?retryWrites=true&w=majority"
-
 mongoose.connect(process.env.DB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
