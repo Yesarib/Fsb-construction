@@ -6,18 +6,18 @@ const router = express.Router();
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "public/uploads");
+    cb(null, "uploads");
   },
   filename: function (req, file, cb) {
     const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
-    cb(null, file.fieldname + "-" + uniqueSuffix);
+    cb(null, "resimler-" + uniqueSuffix);
   },
 });
 
 const upload = multer({ storage: storage });
 
 router.get("/", getProjects);
-router.post("/addProject", upload.array('resimler', 5), addProject);
+router.post("/addProject", upload.single('resimler'), addProject);
 router.delete("/deleteProject/:id", deleteProject)
 
 export default router;

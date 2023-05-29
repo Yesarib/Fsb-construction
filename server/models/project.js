@@ -22,7 +22,7 @@ const projeSchema = new mongoose.Schema({
     default: Date.now,
   },
   imageUrl: {
-    type: [String],
+    type: String,
     required: true,
   },
 });

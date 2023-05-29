@@ -4,8 +4,8 @@ const Navbar = () => {
   return (
     <div className="w-full h-16 items-center justify-evenly d-flex flex mt-2 ">
       <div className="w-full flex justify-center items-center text-[24px]">
-        <a className="font-roboto flex " href="/"> 
-          <img src="assets/logo.png" alt="logo" />
+        <a className="font-roboto flex h-20 " href="/"> 
+          <img className="object-none" src="assets/logo.png" alt="logo" />
         </a>
       </div>
       <div className="w-full">

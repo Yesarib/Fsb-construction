@@ -20,10 +20,10 @@ const ProjectAdd = () => {
       formData.append("place", city);
       formData.append("description", desc);
       formData.append("adress", address);
-      formData.append("resimler", image);
+      formData.append("picture", image);
 
       const response = await axios.post(
-        "http://localhost:5000/projects/addProject",
+        "http://localhost:5000/addProject",
         formData,
         {
           headers: {
@@ -43,7 +43,7 @@ const ProjectAdd = () => {
   };
 
   const handleImageChange = (e) => {
-    setImage(e.target.files[0]); 
+    setImage(e.target.files[0]);
   };
 
   return (

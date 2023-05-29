@@ -31,6 +31,8 @@ const Projects = () => {
     setPageNumber(selected);
   };
 
+  
+
   return (
     <div className="flex flex-col items-center justify-center font-roboto">
       <div className="w-4/6 flex justify-start flex-col mt-16">
@@ -40,7 +42,7 @@ const Projects = () => {
       <div className="w-4/6 flex flex-col justify-start ">
         {displayedProjects.map((project) => (
           <div key={project._id} className="w-full flex bg-gray-100  shadow-xl rounded-xl mt-24">
-            <img className="rounded-xl w-5/12 ml-2 mt-2 mb-2" src={project.imageUrl[0]} alt={project.name} />
+            <img className="rounded-xl w-5/12 ml-2 mt-2 mb-2" src={`http://localhost:5000/${project.imageUrl}`} alt={project.name} />
             <div>
             <h1 className="mt-5 ml-5 text-primary text-[18px] font-semibold" > {project.title} </h1>
             <p className="mt-5 ml-5">
