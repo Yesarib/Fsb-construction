@@ -5,6 +5,7 @@ import mongoose from 'mongoose';
 import cors from 'cors'
 import projectRoutes from './routes/projects.js'
 import multer from 'multer';
+import dotenv from 'dotenv'
 import Project from './models/project.js'
 import { projects } from './data.js'
 import path from 'path';
@@ -14,6 +15,7 @@ import { addProject } from './controllers/projects.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+dotenv.config();
 
 const app = express();
 
@@ -46,10 +48,10 @@ app.post('/addProject',upload.single('picture'), addProject)
 
 
 
-const Port = process.env.Port || 5000;
-const Mongo_url = "mongodb+srv://yesaribaris23:xd2qc4qG5PUvor1i@fsb-cluster.v9czz1b.mongodb.net/?retryWrites=true&w=majority"
+const Port = process.env.PORT || 5000;
+// const Mongo_url = "mongodb+srv://yesaribaris23:xd2qc4qG5PUvor1i@fsb-cluster.v9czz1b.mongodb.net/?retryWrites=true&w=majority"
 
-mongoose.connect(Mongo_url, {
+mongoose.connect(process.env.DB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }).then(() => {
