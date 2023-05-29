@@ -21,7 +21,7 @@ const About = () => {
             sürekli gelişimi desteklemektedir.
           </p>
         </div>
-        <div className="flex justify-start space-x-96 mt-5">
+        <div className="flex justify-start space-x-96 mt-10">
           <div>
             <h1 className="text-primary text-[56px] font-bold">15+</h1>
             <h2 className="text-secondary text-[16px] font-bold ml-2">

@@ -37,7 +37,8 @@ const Projects = () => {
     <div className="flex flex-col items-center justify-center font-roboto">
       <div className="w-4/6 flex justify-start flex-col mt-16">
         <h1 className="text-primary text-[36px] font-semibold mt-10 ml-2"> Projeler </h1>
-        <p className="ml-2 mt-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae aspernatur sit harum mollitia nihil placeat, molestias, sed quia aliquid quod corrupti obcaecati et modi, ratione architecto. Assumenda ducimus tempore pariatur!</p>
+        <p className="ml-2 mt-2">
+        İnşaat Şirketi olarak yılların verdiği tecrübe ve uzmanlıkla birlikte birbirinden etkileyici projeleri sizin için hayata geçiriyoruz. Detaylara özen gösteren ekiplerimiz, modern tasarımlar ve kaliteli malzemelerle projelerinizi tamamlıyor. Sizin hayallerinizi gerçeğe dönüştürmek için buradayız.        </p>
       </div>
       <div className="w-4/6 flex flex-col justify-start ">
         {displayedProjects.map((project) => (
