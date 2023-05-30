@@ -48,10 +48,10 @@ const ProjectAdd = () => {
 
   return (
     <div className="flex">
-      <Sidebar />
+      <Sidebar hscreen={"h-screen"}/>
       <form
         onSubmit={addProject}
-        className="w-full flex flex-col items-center justify-center"
+        className="w-full flex flex-col items-center justify-center mt-36"
       >
         <div className="w-full flex flex-col items-center justify-center">
           <div className="w-4/6">

@@ -41,9 +41,9 @@ const Project = () => {
   };
 
   return (
-    <div className="flex w-full h-screen justify-center items-center">
-      <div className="flex flex-col w-full">
-        <h1 className="text-primary text-[36px] font-bold ml-8 mt-16">
+    <div className="flex w-full  justify-center items-center">
+      <div className="flex flex-col w-full ">
+        <h1 className="text-primary text-[36px] font-bold ml-16 mt-16">
           Projeler
         </h1>
         <table className="w-11/12 border-collapse border-slate-500 border-separate border-spacing-20 ">
@@ -84,7 +84,7 @@ const Project = () => {
           disabledClassName={"pagination__link--disabled"}
           activeClassName={"pagination__link--active"}
         />
-        <a href="/admin/projectadd" className="flex mt-5 mb-10 bg-primary w-72 h-12 text-center justify-center items-center text-white ml-10 rounded-3xl font-semibold text-[18px] tracking-wider"> Yeni Proje </a>
+        <a href="/admin/projectadd" className="flex mt-5 mb-10 ml-16 bg-primary w-72 h-12 text-center justify-center items-center text-white ml-10 rounded-3xl font-semibold text-[18px] tracking-wider"> Yeni Proje </a>
       </div>
     </div>
   );

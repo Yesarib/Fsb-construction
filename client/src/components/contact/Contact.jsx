@@ -11,7 +11,8 @@ const Contact = () => {
         lat: -3.745,
         lng: -38.523
       };
-      const REACT_APP_GOOGLE_MAPS_API_KEY= "AIzaSyDJ4vvbz3JikGjYQ92HY7yymxXtt6Kq5a0"
+
+      const apiKey = ""
   return (
     <div className="flex font-roboto">
       <div className="flex flex-col w-full  items-center mt-16">
@@ -67,7 +68,7 @@ const Contact = () => {
 
       <div className="mt-16 mr-36">
       <LoadScript
-        googleMapsApiKey={REACT_APP_GOOGLE_MAPS_API_KEY}
+        googleMapsApiKey={apiKey}
       >
         <GoogleMap
           mapContainerStyle={containerStyle}

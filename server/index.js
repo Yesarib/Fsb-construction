@@ -11,7 +11,7 @@ import { projects } from './data.js'
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { addProject } from './controllers/projects.js';
-
+import authRoutes from './routes/auth.js'
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -30,6 +30,7 @@ app.use('/uploads',express.static(path.join(__dirname,'public/uploads')))
 
 
 app.use('/projects', projectRoutes);
+app.use('/auth',authRoutes);
 
 
 
