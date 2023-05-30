@@ -41,6 +41,18 @@ export const getProjects = async (req, res) => {
   }
 };
 
+export const getSingleProject = async (req,res) => {
+  try {
+    const { id } = req.params;
+    const project = await Project.findById(id);
+
+    res.status(200).json(project);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+    
+  }
+}
+
 export const deleteProject = async (req, res) => {
   try {
     const { id } = req.params;

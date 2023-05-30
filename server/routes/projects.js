@@ -1,6 +1,6 @@
 import express from "express";
 import multer from "multer";
-import { addProject, deleteProject, getProjects } from "../controllers/projects.js";
+import { addProject, deleteProject, getProjects, getSingleProject } from "../controllers/projects.js";
 
 const router = express.Router();
 
@@ -17,6 +17,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 router.get("/", getProjects);
+router.get("/getSingleProject/:id",getSingleProject)
 router.post("/addProject", upload.single('resimler'), addProject);
 router.delete("/deleteProject/:id", deleteProject)
 

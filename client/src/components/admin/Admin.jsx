@@ -4,22 +4,38 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import Login from "./Login";
 import AdminPanel from "./AdminPanel";
 import ProjectAdd from "./ProjectAdd";
 
 function Admin() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const handleLogin = () => {
-    setIsLoggedIn(true);
-  };
+  const [currentUser, setCurrentUser] = useState(undefined);
+
+  const getCurrentUser = () => {
+    return JSON.parse(localStorage.getItem("user"));
+  }
+
+  useEffect(() => {
+    const user = getCurrentUser();
+    if(user) {
+      setCurrentUser(user);
+    }
+  },[])
+
   return (
     <>
     <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/adminpanel" element={<AdminPanel />} />
-        <Route path="/projectadd" element={<ProjectAdd />} />
+        {currentUser ? (
+          <>
+          <Route path="/adminpanel" element={<AdminPanel />} />
+          <Route path="/projectadd" element={<ProjectAdd />} />
+          </>
+        ) : (
+          <Route path="/" element={<Login />} />
+        )}
+        
+        
       </Routes>
       {/* <Routes>
         <Route path="/" element={<Login onLogin={handleLogin} />} />

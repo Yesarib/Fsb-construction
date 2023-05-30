@@ -1,25 +1,28 @@
-import React,{useState} from "react";
+import React,{ useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from 'axios'
 
 const Login = ({onLogin}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const onSubmitLogin = (e) => {
+  const loginSubmit = async (e) => {
     e.preventDefault();
-    const admin_email = "yesari@gmail.com"
-    const admin_password = "1234"
-
-    if (email === admin_email && password === admin_password) {
-      navigate("/admin/adminpanel")
-      onLogin();
+    try {
+      await axios.post("http://localhost:5000/auth/login",
+        {
+          email,
+          password,
+        }
+      ).then(() => {
+        navigate("/admin/adminpanel");
+        window.location.reload();
+      });
+    } catch (error) {
+      console.log(error);
     }
-    else{
-      alert("Wrong email or password");
-    }
-
-  }
+  };
 
   return (
     <div className="w-full flex justify-center place-items-center h-screen font-roboto">
@@ -52,7 +55,7 @@ const Login = ({onLogin}) => {
           onChange={(e) => setPassword(e.target.value)}
         />
         </div>
-        <button onClick={onSubmitLogin} className="mt-16 w-72 h-10 text-white font-semibold text-[20px] tracking-widest rounded-3xl bg-primary hover:bg-orange-700"> Giriş </button>
+        <button onClick={loginSubmit} className="mt-16 w-72 h-10 text-white font-semibold text-[20px] tracking-widest rounded-3xl bg-primary hover:bg-orange-700"> Giriş </button>
       </div>
     </div>
   );

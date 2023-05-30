@@ -7,6 +7,7 @@ import Company from "./components/company/Company";
 import Home from "./components/home/home";
 import Admin from './components/admin/Admin'
 import Contact from "./components/contact/Contact";
+import Project from "./components/project/Project";
 
 
 
@@ -18,6 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/projects/:id" element={<Project />} />
         <Route path="/company" element={<Company />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>

@@ -12,6 +12,9 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { addProject } from './controllers/projects.js';
 import authRoutes from './routes/auth.js'
+import { verifyToken } from './middleware/auth.js';
+import { register } from './controllers/auth.js';
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -44,6 +47,7 @@ const storage = multer.diskStorage({
 });
 const upload = multer( { storage });
 app.post('/addProject',upload.single('picture'), addProject)
+app.post('/auth/register',register);
 
 
 

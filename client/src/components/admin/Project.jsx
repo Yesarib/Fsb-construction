@@ -74,15 +74,15 @@ const Project = () => {
         </table>
         <ReactPaginate
           className="flex space-x-20 justify-center"
-          previousLabel={"Önceki"}
-          nextLabel={"Sonraki"}
+          previousLabel={"<"}
+          nextLabel={">"}
           pageCount={pageCount}
           onPageChange={changePage}
           containerClassName={"pagination"}
           previousLinkClassName={"pagination__link"}
           nextLinkClassName={"pagination__link"}
           disabledClassName={"pagination__link--disabled"}
-          activeClassName={"pagination__link--active"}
+          activeClassName={"text-primary text-[18px] font-semibold"}
         />
         <a href="/admin/projectadd" className="flex mt-5 mb-10 ml-16 bg-primary w-72 h-12 text-center justify-center items-center text-white ml-10 rounded-3xl font-semibold text-[18px] tracking-wider"> Yeni Proje </a>
       </div>

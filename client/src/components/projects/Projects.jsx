@@ -2,6 +2,7 @@ import React, {useState , useEffect} from "react";
 // import { projects } from "../../data";
 import axios from 'axios'
 import ReactPaginate from "react-paginate";
+import { Link } from 'react-router-dom'
 
 
 const Projects = () => {
@@ -40,9 +41,10 @@ const Projects = () => {
         <p className="ml-2 mt-2">
         İnşaat Şirketi olarak yılların verdiği tecrübe ve uzmanlıkla birlikte birbirinden etkileyici projeleri sizin için hayata geçiriyoruz. Detaylara özen gösteren ekiplerimiz, modern tasarımlar ve kaliteli malzemelerle projelerinizi tamamlıyor. Sizin hayallerinizi gerçeğe dönüştürmek için buradayız.        </p>
       </div>
-      <div className="w-4/6 flex flex-col justify-start ">
+      <div className="w-4/6 flex flex-col justify-start ">        
         {displayedProjects.map((project) => (
-          <div key={project._id} className="w-full flex bg-gray-100  shadow-xl rounded-xl mt-24">
+          <Link key={project._id} to={`/projects/${project._id}`}>
+          <div className="w-full flex bg-gray-100  shadow-xl rounded-xl mt-24">
             <img className="rounded-xl w-5/12 ml-2 mt-2 mb-2" src={`http://localhost:5000/${project.imageUrl}`} alt={project.name} />
             <div>
             <h1 className="mt-5 ml-5 text-primary text-[18px] font-semibold" > {project.title} </h1>
@@ -51,19 +53,20 @@ const Projects = () => {
             </p>
             </div>            
           </div>
+          </Link>
         ))}
       </div>
       <ReactPaginate
           className="flex space-x-20 justify-center mt-10"
-          previousLabel={"Önceki"}
-          nextLabel={"Sonraki"}
+          previousLabel={"<"}
+          nextLabel={">"}
           pageCount={pageCount}
           onPageChange={changePage}
           containerClassName={"pagination"}
           previousLinkClassName={"pagination__link"}
           nextLinkClassName={"pagination__link"}
           disabledClassName={"pagination__link--disabled"}
-          activeClassName={"pagination__link--active"}
+          activeClassName={"text-primary text-[18px] font-semibold"}
         />
     </div>
   );
