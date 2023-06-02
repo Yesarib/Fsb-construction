@@ -11,7 +11,7 @@ const Navbar = () => {
       <div className="w-full">
         <nav className="p-2 text-[17px] space-x-20">
           <a className="font-roboto hover:border-blue-500 hover:border-b-2 tracking-wider" href="/projects">Projeler</a>
-          <a className="font-roboto hover:border-blue-500 hover:border-b-2 tracking-wider" href="/company">Şirket</a>
+          <a className="font-roboto hover:border-blue-500 hover:border-b-2 tracking-wider" href="/company">Kurumsal</a>
           <a href="/contact">
           <button className=" w-24 h-10 rounded-xl bg-primary text-white font-roboto
             transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300

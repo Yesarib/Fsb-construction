@@ -3,6 +3,7 @@ import React, {useState , useEffect} from "react";
 import axios from 'axios'
 import ReactPaginate from "react-paginate";
 import { Link } from 'react-router-dom'
+import projectService from '../../context/project'
 
 
 const Projects = () => {
@@ -11,10 +12,14 @@ const Projects = () => {
   const projectsPerPage = 5; 
 
   const getProjects = async () => {
-    await axios.get("http://localhost:5000/projects").then((res) => {
+    await projectService.getProject().then((res) => {
       setProjects(res.data);
       console.log(res.data);
-    });
+    })
+    // await axios.get("http://localhost:5000/projects").then((res) => {
+    //   setProjects(res.data);
+    //   console.log(res.data);
+    // });
   };
 
   useEffect(() => {

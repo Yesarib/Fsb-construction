@@ -101,9 +101,11 @@ const ProjectAdd = () => {
                     </label>
                   </div>
                   <textarea
-                    className="w-96 mt-2 border-2 border-gray-500 rounded-xl"
+                    className="mt-2 border-2 border-gray-500 rounded-xl"
                     type="text"
                     name="desc"
+                    rows="10"
+                    cols="50"
                     id="desc"
                     value={desc}
                     onChange={(e) => setDesc(e.target.value)}
@@ -117,10 +119,12 @@ const ProjectAdd = () => {
                     </label>
                   </div>
                   <textarea
-                    className="w-96 mt-2 border-2 border-gray-500 rounded-xl"
+                    className="mt-2 border-2 border-gray-500 rounded-xl"
                     type="text"
                     name="address"
                     id="address"
+                    rows="10"
+                    cols="50"
                     value={address}
                     onChange={(e) => setAddress(e.target.value)}
                   />

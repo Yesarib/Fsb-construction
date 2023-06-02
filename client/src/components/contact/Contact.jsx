@@ -12,7 +12,7 @@ const Contact = () => {
         lng: -38.523
       };
 
-      const apiKey = ""
+      const apiKey = "AIzaSyDJ4vvbz3JikGjYQ92HY7yymxXtt6Kq5a0"
   return (
     <div className="flex font-roboto">
       <div className="flex flex-col w-full  items-center mt-16">
