@@ -15,7 +15,8 @@ const Login = ({onLogin}) => {
           email,
           password,
         }
-      ).then(() => {
+      ).then((res) => {
+        localStorage.setItem("user", JSON.stringify(res.data));
         navigate("/admin/adminpanel");
         window.location.reload();
       });

@@ -1,16 +1,12 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
-import { useState,useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 import Login from "./Login";
 import AdminPanel from "./AdminPanel";
 import ProjectAdd from "./ProjectAdd";
 
 function Admin() {
   const [currentUser, setCurrentUser] = useState(undefined);
+  const navigate = useNavigate();
 
   const getCurrentUser = () => {
     return JSON.parse(localStorage.getItem("user"));
@@ -18,40 +14,21 @@ function Admin() {
 
   useEffect(() => {
     const user = getCurrentUser();
-    if(user) {
+    if (user) {
       setCurrentUser(user);
+      navigate("/admin/adminpanel"); // Kullanıcı giriş yapmışsa otomatik olarak /adminpanel yoluna yönlendirilir.
     }
-  },[])
+    else{
+      navigate("/admin")
+    }
+  }, [navigate]);
 
   return (
-    <>
     <Routes>
-        {currentUser ? (
-          <>
-          <Route path="/adminpanel" element={<AdminPanel />} />
-          <Route path="/projectadd" element={<ProjectAdd />} />
-          </>
-        ) : (
-          <Route path="/" element={<Login />} />
-        )}
-        
-        
-      </Routes>
-      {/* <Routes>
-        <Route path="/" element={<Login onLogin={handleLogin} />} />
-        {!isLoggedIn ? (
-          <Route
-            path="/adminpanel"
-            element={<Navigate to="/admin" />} // Redirect to login if not logged in
-          />
-        ) : (
-          <>
-            <Route path="/adminpanel" element={<AdminPanel />} />
-            <Route path="/projectadd" element={<ProjectAdd />} />
-          </>
-        )}
-      </Routes> */}
-    </>
+      <Route path="/" element={currentUser ? <Navigate to="/adminpanel" /> : <Login />} />
+      <Route path="/adminpanel" element={<AdminPanel />} />
+      <Route path="/projectadd" element={<ProjectAdd />} />
+    </Routes>
   );
 }
 
