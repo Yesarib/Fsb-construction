@@ -50,7 +50,7 @@ const Projects = () => {
         {displayedProjects.map((project) => (
           <Link key={project._id} to={`/projects/${project._id}`}>
           <div className="w-full flex bg-gray-100  shadow-xl rounded-xl mt-24">
-            <img className="rounded-xl w-5/12 ml-2 mt-2 mb-2" src={`http://localhost:5000/${project.imageUrl}`} alt={project.name} />
+            <img className="rounded-xl w-5/12 ml-2 mt-2 mb-2" src={`https://fsb-website.onrender.com/${project.imageUrl}`} alt={project.name} />
             <div>
             <h1 className="mt-5 ml-5 text-primary text-[18px] font-semibold" > {project.title} </h1>
             <p className="mt-5 ml-5">
