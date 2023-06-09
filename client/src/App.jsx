@@ -14,7 +14,7 @@ import Project from "./components/project/Project";
 
 function App() {
   return (
-    <>
+    <Router>
       <Navbar />
       <Routes>
         <Route path="/client" element={<Home />} />
@@ -24,7 +24,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
-    </>
+    </Router>
   );
 }
 
