@@ -9,19 +9,22 @@ import Admin from './components/admin/Admin'
 import Contact from "./components/contact/Contact";
 import Project from "./components/project/Project";
 
+
+
+
 function App() {
   return (
-    <div>
+    <>
       <Navbar />
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/projects/:id" element={<Project />} />
         <Route path="/company" element={<Company />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/*" element={<Home />} />
       </Routes>
       <Footer />
-    </div>
+    </>
   );
 }
 
@@ -30,7 +33,7 @@ function MainApp() {
     <Router>
       <Routes>
         <Route path="/admin/*" element={<Admin />} />
-        <Route path="/client/*" element={<App />} />
+        <Route path="/*" element={<App />} />
       </Routes>
     </Router>
   );
