@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const PROJECT_URL = "https://fsb-website.onrender.com/projects";
-const SINGLEPROJECT_URL = (id) => `https://fsb-website.onrender.com/projects/getSingleProject/${id}`;
+const PROJECT_URL = "https://fsb-website.onrender.com/projects" || "https://localhost:5000/projects";
+const SINGLEPROJECT_URL = (id) => `https://fsb-website.onrender.com/projects/getSingleProject/${id}` || `https://localhost:5000/projects/${id}`;
 
 const getProject = () => {
     return axios.get(PROJECT_URL);
