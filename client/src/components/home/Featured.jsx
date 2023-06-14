@@ -40,7 +40,7 @@ const Featured = () => {
             className="ml-10" 
             key={project.id}>
                 <div className="flex flex-col ">
-                    <img className="w-96 h-60 rounded-xl" src={`http://localhost:5000/${project.imageUrl}`} alt={project.name} />
+                    <img className="w-96 h-60 rounded-xl" src={`https://fsb-website.onrender.com/${project.imageUrl}`} alt={project.name} />
                     <h1 className="font-bold mt-2 ml-1 text-[20px]"> {project.name} </h1>
                     <p className="w-4/5 ml-1 mt-2 text-secondary">
                         {project.description.slice(0,110)} ...
