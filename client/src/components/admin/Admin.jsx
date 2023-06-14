@@ -10,26 +10,31 @@ function Admin() {
 
   const getCurrentUser = () => {
     return JSON.parse(localStorage.getItem("user"));
-  }
+  };
 
   useEffect(() => {
     const user = getCurrentUser();
     if (user) {
       setCurrentUser(user);
-      navigate("/admin/adminpanel"); // Kullanıcı giriş yapmışsa otomatik olarak /adminpanel yoluna yönlendirilir.
-    }
-    else{
-      navigate("/admin")
+    } else {
+      setCurrentUser(null);
+      navigate("/admin");
     }
   }, [navigate]);
 
+  if (currentUser === undefined) {
+    return <div>Loading...</div>;
+  }
+
+  if (currentUser === null) {
+    return <Login />;
+  }
+
   return (
     <Routes>
-      <Route path="/" element={currentUser ? <Navigate to="/adminpanel" /> : <Login />} />
+      <Route path="/" element={<Navigate to="/admin/adminpanel" />} />
       <Route path="/adminpanel" element={<AdminPanel />} />
       <Route path="/projectadd" element={<ProjectAdd />} />
     </Routes>
   );
 }
-
-export default Admin;
