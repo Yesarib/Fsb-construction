@@ -38,3 +38,6 @@ function Admin() {
     </Routes>
   );
 }
+
+
+export default Admin;
