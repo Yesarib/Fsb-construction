@@ -23,7 +23,7 @@ const ProjectAdd = () => {
       formData.append("picture", image);
 
       const response = await axios.post(
-        "http://localhost:5000/addProject",
+        "https://fsb-website.onrender.com/addProject",
         formData,
         {
           headers: {

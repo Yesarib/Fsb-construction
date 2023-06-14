@@ -10,7 +10,7 @@ const Login = ({onLogin}) => {
   const loginSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/auth/login",
+      await axios.post("https://fsb-website.onrender.com/auth/login",
         {
           email,
           password,

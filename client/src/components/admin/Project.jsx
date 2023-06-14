@@ -8,13 +8,13 @@ const Project = () => {
   const projectsPerPage = 5; 
 
   const getProjects = async () => {
-    await axios.get("http://localhost:5000/projects").then((res) => {
+    await axios.get("https://fsb-website.onrender.com/projects").then((res) => {
       setProjects(res.data);
     });
   };
 
   const deleteProject = async (id) => {
-    axios.delete(`http://localhost:5000/projects/deleteProject/${id}`)
+    axios.delete(`https://fsb-website.onrender.com/projects/deleteProject/${id}`)
     .then((res) => {
       console.log(res);  
       alert("Başarıyla silindi");
