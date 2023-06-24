@@ -17,7 +17,7 @@ const Contact = () => {
     <div className="flex font-roboto">
       <div className="flex flex-col w-full  items-center mt-16">
         <div>
-          <div className="w-72 flex items-center">
+          <div className="md:w-72 flex items-center">
             <img
               className="w-6"
               src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAABEElEQVR4nO3UPS9EQRTG8Z+XiEQoVBL7YSRaKjodHZ3GV1Aolbai0+lU2i1pVHyA/QLeWVk5Jte1V3bYVWzuPzm5c2fOPM/N3DmHmppRZgGX6AwprtEomy7Hcx6tIZi2Qrvo9cEj1mM8g/MBml5gLrRXcV807ia8YDPep3A6ANMzTIfmBp5j/otxN96wG3MTOPqD6TEmQ2sHr4W1b8afsR/zYzj4hekhxkNjr8d6pXE/m6uin49OVImcFI5ru3Rc5Sj/puYPuYmcC/LUIyf3Yib6KYnZyF3BXWHtAWuZpZjIbQJLuMVNjHObTyKn7S3q3W6vMnQSOaXSxlb03UaM25kaic4/R6I27oz8UdfUjA7vZuyuMsipCFsAAAAASUVORK5CYII="
@@ -39,8 +39,8 @@ const Contact = () => {
 
         {/* İnput alanları */}
         <div className="w-full flex flex-col justify-center items-center mt-24">
-            <h1 className="w-72 text-primary font-bold text-[36px]"> Bize Ulaşın </h1>
-            <div className="w-72 justify-center items-center mt-10">
+            <h1 className="w-72 text-primary font-bold text-[36px] md:text-4xl"> Bize Ulaşın </h1>
+            <div className="w-72 md:w-72 justify-center items-center mt-10">
                 <div>
                     <label className="ml-2  tracking-wider"> İsminiz </label>
                 </div>

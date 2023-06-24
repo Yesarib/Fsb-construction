@@ -40,20 +40,20 @@ const Projects = () => {
   
 
   return (
-    <div className="flex flex-col items-center justify-center font-roboto">
-      <div className="w-4/6 flex justify-start flex-col mt-16">
-        <h1 className="text-primary text-[36px] font-semibold mt-10 ml-2"> Projeler </h1>
-        <p className="ml-2 mt-2">
+    <div className="flex flex-col items-center justify-center font-roboto grid place-items-center">
+      <div className="w-full md:w-4/6 flex justify-start flex-col mt-16">
+        <h1 className="text-primary text-[36px] font-semibold mt-10 ml-2 md:text-4xl"> Projeler </h1>
+        <p className="ml-2 mt-2 md:text-lg">
         İnşaat Şirketi olarak yılların verdiği tecrübe ve uzmanlıkla birlikte birbirinden etkileyici projeleri sizin için hayata geçiriyoruz. Detaylara özen gösteren ekiplerimiz, modern tasarımlar ve kaliteli malzemelerle projelerinizi tamamlıyor. Sizin hayallerinizi gerçeğe dönüştürmek için buradayız.        </p>
       </div>
-      <div className="w-4/6 flex flex-col justify-start ">        
+      <div className="w-4/6 flex flex-col justify-start grid grid-cols-1 md:grid-cols-1">        
         {displayedProjects.map((project) => (
           <Link key={project._id} to={`/projects/${project._id}`}>
-          <div className="w-full flex bg-gray-100  shadow-xl rounded-xl mt-24">
+          <div className="w-full flex bg-gray-100  shadow-xl rounded-xl mt-24 md:flex-row ">
             <img className="rounded-xl w-5/12 ml-2 mt-2 mb-2" src={`https://fsb-website.onrender.com/${project.imageUrl}`} alt={project.name} />
             <div>
-            <h1 className="mt-5 ml-5 text-primary text-[18px] font-semibold" > {project.title} </h1>
-            <p className="mt-5 ml-5">
+            <h1 className="mt-5 ml-5 text-primary text-[18px] font-semibold md:text-xl" > {project.title} </h1>
+            <p className="mt-5 ml-5 mr-5 text-base md:text-sm lg:text-base md:mb-5">
                 {project.description}
             </p>
             </div>            

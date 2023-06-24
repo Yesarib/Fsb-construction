@@ -1,12 +1,11 @@
 import React from 'react'
-
 const Services = () => {
   return (
-    <div className="w-full flex flex-col items-center justify-center mt-20 font-roboto mb-36">
-        <div className='w-4/6 flex justify-start'>
-            <h1 className='flex justify-start mb-5 text-primary font-bold text-[36px]'>  Hizmetlerimiz </h1>
+    <div className="w-full flex flex-col items-center justify-center mt-36 font-roboto mb-36 grid">
+        <div className='w-full md:w-4/6'>
+            <h1 className='flex mb-5 text-primary font-bold text-[36px] md:text-4xl'>  Hizmetlerimiz </h1>
         </div>
-        <div className="flex justify-evenly space-x-20 mt-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-20 mt-10">
             <div className='w-80 border-2 rounded-2xl flex flex-col justify-center items-center shadow-2xl'>
                 <h1 className='text-[17px] font-semibold mt-5'>1. Servis</h1>
                 <p className='text-secondary text-[15px] mt-3 ml-3 mb-10'>

@@ -2,13 +2,13 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="w-full flex items-center justify-center mt-20 font-roboto">
-      <div className="w-4/6">
-        <h1 className="flex justify-start mb-5 text-primary font-bold text-[36px]">
+    <div className="w-full flex items-center justify-center mt-20 font-roboto grid place-items-center">
+      <div className="w-full md:w-4/6">
+        <h1 className="flex justify-start mb-5 text-primary font-bold text-[36px] md:text-4xl">
           Türkiye Çapında Faaliyetler
         </h1>
-        <div className="w-11/12 flex justify-start">
-          <p className="text-[16px]">
+        <div className="w-full md:w-11/12 flex justify-start">
+          <p className="text-[16px] md:text-lg">
             FSB İnşaat, Türkiye'de faaliyet gösteren önde gelen bir inşaat
             şirketidir. Uzun yıllara dayanan deneyimi ve güçlü bir uzmanlıkla,
             inşaat sektöründe kaliteli ve yenilikçi projeler sunmaktadır.
@@ -21,7 +21,7 @@ const About = () => {
             sürekli gelişimi desteklemektedir.
           </p>
         </div>
-        <div className="flex justify-start space-x-96 mt-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-20 mt-10">
           <div>
             <h1 className="text-primary text-[56px] font-bold">15+</h1>
             <h2 className="text-secondary text-[16px] font-bold ml-2">
